@@ -1,25 +1,98 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>项目详情页面</title>
-</head>
-<body>
-  <!-- 最外层的包裹元素 -->
-  <div id="warpper">
-    <!-- 头部 -->
-    <header id="header">
-      <!-- 上部分 -->
-      <div class="headTop">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>项目详情页面</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/details.css" />
+  </head>
+  <body>
+    <!-- 最外层的包裹元素 -->
+    <div id="warpper">
+      <!-- 头部开始 -->
+      <header id="header">
+        <!-- 上部分 -->
+        <div class="headTop">
+          <!-- 版心元素 -->
+          <div class="headTopMain">
+            <!-- 左侧 -->
+            <div class="left">
+              <h5>欢迎来到我的糖果屋！ 请</h5>
+              <p>
+                <a href="javascript:;">登录</a>
+                <a href="javascript:;">注册</a>
+              </p>
+            </div>
+            <!-- 右侧 -->
+            <div class="right">
+              <nav>
+                <a href="javascript:;">个人中心</a>
+                <a href="javascript:;">糖果品种</a>
+                <a href="javascript:;">糖果分类</a>
+                <a href="javascript:;">糖果装饰</a>
+                <a href="javascript:;">糖果含量</a>
+                <a href="javascript:;">糖果产地</a>
+                <a href="javascript:;">糖果成分</a>
+                <a href="javascript:;">糖果制造商</a>
+              </nav>
+            </div>
+          </div>
+        </div>
+        <!-- 下部分 -->
+        <div class="headBottom">
+          <!-- 版心元素 -->
+          <div class="headBottomMain">
+            <!-- 左侧logo -->
+            <div class="logo">
+              <a href="javascript:;">
+                <img src="images/logo.png" alt="" />
+              </a>
+            </div>
+            <!-- 右侧搜索框 -->
+            <div class="search">
+              <input type="text" placeholder="请输入搜索内容" />
+              <input type="submit" value="搜索" />
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- 头部结束 -->
+
+      <!-- 分类导航开始 -->
+      <div id="navWrap">
         <!-- 版心元素 -->
-        <div class="headTopMain">
-          <!-- 左侧 -->
-          <!-- 右侧 -->
+        <div class="navWrapMain">
+          <a href="javascript:;">全部糖果分类</a>
+          <a href="javascript:;">个人中心</a>
+          <a href="javascript:;">糖果品种</a>
+          <a href="javascript:;">糖果分类</a>
+          <a href="javascript:;">糖果装饰</a>
+          <a href="javascript:;">糖果含量</a>
+          <a href="javascript:;">糖果产地</a>
+          <a href="javascript:;">糖果成分</a>
+          <a href="javascript:;">秒杀</a>
         </div>
       </div>
-      <!-- 下部分 -->
-    </header>
-  </div>
-</body>
+      <!-- 分类导航结束 -->
+
+      <!-- 内容区域开始 -->
+      <div id="content">
+        <!-- 版心元素 -->
+        <div class="contentMain">
+          <!-- 路径导航 -->
+          <div class="navPath">
+            <a href="javascript:;">硬糖、软糖、棒棒糖</a>
+            <i>/</i>
+            <a href="javascript:;">硬糖</a>
+            <i>/</i>
+            <a href="javascript:;">阿尔卑斯</a>
+            <i>/</i>
+            <a>草莓口味</a>
+          </div>
+        </div>
+      </div>
+      <!-- 内容区域结束 -->
+    </div>
+  </body>
 </html>

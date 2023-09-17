@@ -1,0 +1,129 @@
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+#warpper #header .headTop {
+  background-color: #eaeaea;
+  height: 30px;
+}
+#warpper #header .headTop .headTopMain {
+  width: 1200px;
+  margin: 0 auto;
+  line-height: 30px;
+}
+#warpper #header .headTop .headTopMain::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+#warpper #header .headTop .headTopMain .left h5 {
+  float: left;
+  margin-right: 5px;
+}
+#warpper #header .headTop .headTopMain .left p {
+  float: left;
+}
+#warpper #header .headTop .headTopMain .left p a:first-child {
+  border-right: 1px solid #b3aeae;
+  margin-right: 5px;
+  padding-right: 5px;
+}
+#warpper #header .headTop .headTopMain .right nav {
+  float: right;
+  font-size: 0;
+}
+#warpper #header .headTop .headTopMain .right nav a {
+  padding: 0 10px;
+  border-right: 1px solid #b3aeae;
+  font-size: 12px;
+}
+#warpper #header .headTop .headTopMain .right nav a:last-child {
+  border: none;
+  padding-right: 0;
+}
+#warpper #header .headBottom .headBottomMain {
+  width: 1200px;
+  margin: 0 auto;
+}
+#warpper #header .headBottom .headBottomMain::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+#warpper #header .headBottom .headBottomMain .logo {
+  float: left;
+}
+#warpper #header .headBottom .headBottomMain .logo a img {
+  width: 175px;
+  height: 56px;
+  margin: 25px 45px;
+}
+#warpper #header .headBottom .headBottomMain .search {
+  float: right;
+  margin-top: 35px;
+}
+#warpper #header .headBottom .headBottomMain .search input:first-child {
+  box-sizing: border-box;
+  width: 490px;
+  height: 32px;
+  padding: 0px 4px;
+  border: 3px solid #ea4a36;
+  float: left;
+}
+#warpper #header .headBottom .headBottomMain .search input:last-child {
+  width: 68px;
+  height: 32px;
+  background-color: #ea4a36;
+  color: #fff;
+  border: none;
+  float: left;
+}
+#warpper #header .headBottom .headBottomMain .search input::-webkit-input-placeholder {
+  color: yellowgreen;
+}
+#warpper #navWrap {
+  border-bottom: 2px solid #e1251b;
+}
+#warpper #navWrap .navWrapMain {
+  width: 1200px;
+  margin: 0 auto;
+}
+#warpper #navWrap .navWrapMain::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+#warpper #navWrap .navWrapMain a {
+  margin: 0 22px;
+  font-size: 16px;
+  color: #333;
+  float: left;
+  line-height: 50px;
+}
+#warpper #navWrap .navWrapMain a:first-child {
+  width: 210px;
+  height: 50px;
+  background-color: #e1251b;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  float: left;
+  text-align: center;
+  line-height: 50px;
+}
+#warpper #content .contentMain {
+  width: 1200px;
+  margin: 15px auto 0 auto;
+}
+#warpper #content .contentMain .navPath {
+  padding: 9px 15px 9px 0;
+  font-size: 0;
+}
+#warpper #content .contentMain .navPath a {
+  font-size: 12px;
+}
+#warpper #content .contentMain .navPath i {
+  font-size: 12px;
+  padding: 0 5px;
+}

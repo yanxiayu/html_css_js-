@@ -1,0 +1,157 @@
+@import './mixins/clear.less';
+// 最外层的包裹元素
+#warpper {
+  // 头部开始
+  #header {
+    // 上部分
+    .headTop {
+      background-color: #eaeaea;
+      height: 30px;
+      // 版心元素
+      .headTopMain {
+        width: 1200px;
+        margin: 0 auto;
+        line-height: 30px;
+        // overflow: hidden;
+        .clearfix();
+        // 左侧
+        .left {
+          h5 {
+            float: left;
+            margin-right: 5px;
+          }
+          p {
+            float: left;
+            a {
+              &:first-child {
+               border-right: 1px solid #b3aeae;
+               margin-right: 5px;
+               padding-right: 5px;
+              }
+            }
+          }
+        }
+        // 右侧
+        .right {
+          nav {
+            float: right;
+            font-size: 0;
+            a {
+              padding: 0 10px;
+              border-right: 1px solid #b3aeae;
+              font-size: 12px;
+              &:last-child {
+                border: none;
+                padding-right: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+    // 下部分
+    .headBottom {
+      // 版心元素
+      .headBottomMain {
+        width: 1200px;
+        margin: 0 auto;
+        .clearfix();
+        // 左侧logo
+        .logo {
+          float: left;
+          a {
+            img {
+              width: 175px;
+              height: 56px;
+              margin: 25px 45px;
+            }
+          }
+        }
+        // 右侧搜索框
+        .search {
+          float: right;
+          margin-top: 35px;
+          input {
+            // 文本框
+            &:first-child {
+              box-sizing:border-box;
+              width: 490px;
+              height: 32px;
+              padding:0px 4px;
+              border: 3px solid #ea4a36;
+              float: left;
+            }
+            // 提交按钮
+            &:last-child {
+              width: 68px;
+              height: 32px;
+              background-color: #ea4a36;
+              color: #fff;
+              border: none;
+              float: left;
+            }
+            // 修饰placeholder，input框默认提示文字
+            &::-webkit-input-placeholder {
+              color: yellowgreen;
+            }
+          }
+        }
+      }
+    }
+  }
+  // 头部结束
+
+
+  // 分类导航开始
+  #navWrap {
+    border-bottom: 2px solid #e1251b;
+    // 版心元素
+    .navWrapMain {
+      width: 1200px;
+      margin: 0 auto;
+      .clearfix();
+      a {
+        margin: 0 22px; 
+        font-size: 16px;
+        color: #333;
+        float: left;
+        line-height: 50px;
+        // 全部糖果分类
+        &:first-child{
+          width: 210px;
+          height: 50px;
+          background-color: #e1251b;
+          color:#fff;
+          font-size: 14px;
+          font-weight: bold;
+          float: left;
+          text-align: center;
+          line-height: 50px;
+        }
+      }
+    }
+  } 
+  // 分类导航结束
+
+  // 内容区域开始
+  #content {
+    // 版心元素
+    .contentMain {
+      width: 1200px;
+      margin:15px auto 0 auto;
+      // 路径导航
+      .navPath {
+        padding: 9px 15px 9px 0;
+        font-size: 0;
+        a {
+          font-size: 12px;
+        }
+        i{
+          font-size: 12px;
+          padding: 0 5px;
+        }
+      }
+    }
+  }
+  // 内容区域结束
+}
