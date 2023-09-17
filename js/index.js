@@ -278,4 +278,61 @@ window.onload = function () {
       ul.style.left = -start + "px";
     };
   })();
+
+  // 详情部分数据动态渲染
+  (function () {
+    /**
+     * 思路：
+     * 1.查找rightTop元素
+     * 2.查找data.js -> goodData -> goodsDetail中相应的数据
+     * 3.建立字符串变量，将原来的布局结构粘进来，将对应的内容进行重新动态渲染
+     */
+
+    // 1.获取rightTop元素
+    let rightTop = document.querySelector(
+      "#warpper #content .contentMain #center .right .rightTop"
+    );
+
+    // 2.获取对应数据
+    let goodsDetail = goodData.goodsDetail;
+    console.log(goodsDetail);
+
+    // 3.建立字符串
+    let str = `
+        <h3>${goodsDetail.title}</h3>
+        <p>${goodsDetail.recommend}</p>
+        <div class="priceWrap">
+          <div class="priceTop">
+            <span>价&nbsp;&nbsp;&nbsp;&nbsp;格</span>
+            <div class="price">
+              <span>￥</span>
+              <p>${goodsDetail.price}</p>
+              <i>降价通知</i>
+            </div>
+            <p>
+              <span>累计评价</span>
+              <span>${goodsDetail.evaluateNum}</span>
+            </p>
+          </div>
+          <div class="priceBottom">
+            <span>促&nbsp;&nbsp;&nbsp;&nbsp;销</span>
+            <p>
+              <span>${goodsDetail.promoteSales.type}</span>
+              <span>${goodsDetail.promoteSales.content}</span>
+            </p>
+          </div>
+        </div>
+        <div class="support">
+          <span>支&nbsp;&nbsp;&nbsp;&nbsp;持</span>
+          <p>${goodsDetail.support}</p>
+        </div>
+        <div class="address">
+          <span>配&nbsp;&nbsp;送&nbsp;&nbsp;至</span>
+          <p>${goodsDetail.address}</p>
+        </div>
+    `;
+
+    // 4.重新渲染数据
+    rightTop.innerHTML = str;
+  })();
 };

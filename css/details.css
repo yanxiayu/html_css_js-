@@ -219,13 +219,14 @@
   float: right;
 }
 #warpper #content .contentMain #center .right .rightTop h3 {
-  font-size: 14px;
+  font-size: 18px;
   line-height: 21px;
   margin-top: 15px;
 }
 #warpper #content .contentMain #center .right .rightTop > p {
   color: #e12228;
   margin-top: 15px;
+  font-size: 14px;
 }
 #warpper #content .contentMain #center .right .rightTop .priceWrap {
   margin-top: 10px;
