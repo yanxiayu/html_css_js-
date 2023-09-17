@@ -146,4 +146,39 @@ window.onload = function () {
       };
     };
   }
+
+  // 动态渲染缩略图的数据
+  (function () {
+    /**
+     * 思路：
+     * 1.先获取piclist元素下的ul
+     * 2.在获取data.js文件下的数据goodData -> imagessrc
+     * 3.遍历数组，根据数组的长度来创建li元素
+     * 4.让ul遍历追加li元素
+     */
+
+    // 1.获取ul元素
+    const ul = document.querySelector(
+      "#warpper #content .contentMain #center .left .leftBottom .piclist ul"
+    );
+
+    // 2.获取imagessrc数据
+    let imagessrc = goodData.imagessrc;
+
+    // 3.遍历数组
+    for (let i = 0; i < imagessrc.length; i++) {
+      // 4.创建li元素
+      let newLi = document.createElement("li");
+
+      // 5.创建li中的img元素
+      let newImg = document.createElement("img");
+      newImg.src = imagessrc[i].s;
+
+      // 6.将img追加到li中
+      newLi.appendChild(newImg);
+
+      // 7.将li追加到ul中
+      ul.appendChild(newLi);
+    }
+  })();
 };
