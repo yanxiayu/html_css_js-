@@ -79,7 +79,7 @@ window.onload = function () {
       let bigImg = document.createElement("img");
       bigImg.src = "images/b1.png";
 
-      // 6.将大图片追加到大图片中
+      // 6.将大图片追加到大图框中
       bigPic.appendChild(bigImg);
 
       // 7.将蒙版追加到小图框中
@@ -88,8 +88,8 @@ window.onload = function () {
       // 9.将大图框追加到leftTop中
       leftTop.appendChild(bigPic);
 
-      // offsetWidth/offsetHeight：获取元素自身的宽高，包括border、padding、margin
-      // clientWidth/clientHeight：获取元素自身的宽高，不包括border、padding、margin
+      // offsetWidth/offsetHeight：获取元素自身的宽高，包括border、padding、margin 站位
+      // clientWidth/clientHeight：获取元素可见部分宽高，不包括border、padding、margin 可视
       // getBindingClientRect():返回的是一个对象
 
       // 设置移动事件
@@ -121,6 +121,19 @@ window.onload = function () {
         // 设置left和top属性
         maskDiv.style.left = left + "px";
         maskDiv.style.top = top + "px";
+
+        // 移动比例关系 = 蒙版元素移动的距离 / 大图片元素移动的距离
+        // 蒙版元素移动的距离 = 小图框宽度 - 蒙版元素的宽度
+        // 大图片的移动距离 = 大图片的宽度 - 大图框元素的宽度
+
+        let scale =
+          (smallPic.clientWidth - maskDiv.offsetWidth) /
+          (bigImg.offsetWidth - bigPic.clientWidth);
+
+        // console.log(scale); 0.495
+
+        bigImg.style.left = -left / scale + "px";
+        bigImg.style.top = -top / scale + "px";
       };
 
       // 设置移除事件

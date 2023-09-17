@@ -169,4 +169,7 @@
 #warpper #content .contentMain #center .left .leftTop .bigPic img {
   width: 800px;
   height: 800px;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
