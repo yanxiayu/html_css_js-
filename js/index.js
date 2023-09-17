@@ -1,5 +1,8 @@
 // onload作用：需要将所有DOM元素对象以及相关的资源全部都加载完毕，再来实现的事件函数
 window.onload = function () {
+  // 声明一个记录点击的缩略图下标
+  let idx = 0;
+
   // 路径导航的数据渲染
   navPathDataBind();
   function navPathDataBind() {
@@ -65,6 +68,9 @@ window.onload = function () {
       "#warpper #content .contentMain #center .left .leftTop"
     );
 
+    // 获取数据
+    let imagessrc = goodData.imagessrc;
+
     // 2.设置移入的事件
     smallPic.onmouseenter = function () {
       // 3.创建蒙版元素
@@ -77,7 +83,7 @@ window.onload = function () {
 
       // 5.创建大图片元素
       let bigImg = document.createElement("img");
-      bigImg.src = "images/b1.png";
+      bigImg.src = imagessrc[idx].b;
 
       // 6.将大图片追加到大图框中
       bigPic.appendChild(bigImg);
@@ -179,6 +185,39 @@ window.onload = function () {
 
       // 7.将li追加到ul中
       ul.appendChild(newLi);
+    }
+  })();
+
+  // 点击缩略图的效果
+  (function () {
+    /**
+     * 思路：
+     * 1.获取所有li元素，并且循环发生点击事件
+     * 2.点击缩略图，需要确定下标位置来找到对应的小图路径和大图路径替换现有的src的值
+     */
+
+    // 1.获取所有li元素
+    let liNodes = document.querySelectorAll(
+      "#warpper #content .contentMain #center .left .leftBottom .piclist ul li"
+    );
+
+    // 获取小图元素
+    let smallPic_img = document.querySelector(
+      "#warpper #content .contentMain #center .left .leftTop .smallPic img"
+    );
+
+    // 获取数据
+    let imagessrc = goodData.imagessrc;
+
+    // 2.循环点击li标签
+    for (let i = 0; i < liNodes.length; i++) {
+      liNodes[i].onclick = function () {
+        // 将局部变量i设置为全局变量
+        idx = i;
+
+        // 变化小图路径
+        smallPic_img.src = imagessrc[i].s;
+      };
     }
   })();
 };
