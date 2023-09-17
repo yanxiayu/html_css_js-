@@ -12,11 +12,15 @@
   }
 }
 ```
-1. 修饰文本框的修饰placeholder，input框默认提示文字
+3. 修饰文本框的修饰placeholder，input框默认提示文字
 ```css
 &::-webkit-input-placeholder {
   color: yellowgreen;
 }
+```
+4. 行内块强制不换行
+```css
+white-space: nowrap; 
 ```
 
 ### JavaScript
