@@ -151,6 +151,65 @@
           padding: 0 5px;
         }
       }
+      // 路径导航结束
+
+      // 中间区域开始
+      #center {
+        margin:5px 0 15px;
+        .clearfix();
+        // 左边放大镜开始
+        .left {
+          width: 400px;
+          float: left;
+          // 左上部分
+          .leftTop {
+            width: 400px;
+            height: 400px;
+            border: 1px solid #DFDFDF;
+            position: relative;
+            // 小图框
+            .smallPic {
+              position: relative;
+              // 小图片  
+              img {
+
+              }
+              // 蒙版元素
+              .mask {
+                width: 200px;
+                height: 200px;
+                background-color: rgba(255, 255, 255, .5);
+                border: 1px solid #ddd;
+                position: absolute;
+                left: 0;
+                top: 0;
+              }
+            }
+            // 大图框
+            .bigPic {
+              width: 400px;
+              height: 400px;
+              border: 1px solid #ddd;
+              position: absolute;
+              left: 420px;
+              top: 0;
+              // 溢出隐藏
+              overflow: hidden;
+              // 大图片
+              img {
+                width: 800px;
+                height: 800px;
+              }
+            }
+          }
+          // 左下缩略图部分
+          .leftBottom {
+
+          }
+        }
+        // 左边放大镜结束
+      }
+      // 中间区域结束
     }
   }
   // 内容区域结束
