@@ -220,4 +220,62 @@ window.onload = function () {
       };
     }
   })();
+
+  // 缩略图左右点击切换的效果
+  (function () {
+    /**
+     * 思路：
+     * 1.先获取左右两侧箭头按钮
+     * 2.再获取可视的div以及ul元素和所有的li元素
+     * 3.计算(发生起点，步长、总体运动的距离值)
+     * 4.然后再发生点击事件
+     */
+
+    // 1.获取箭头元素
+    let prev = document.querySelector(
+      "#warpper #content .contentMain #center .left .leftBottom a.prev"
+    );
+    let next = document.querySelector(
+      "#warpper #content .contentMain #center .left .leftBottom a.next"
+    );
+
+    // 2.获取可视的div以及ul元素和所有的li元素
+    let piclist = document.querySelector(
+      "#warpper #content .contentMain #center .left .leftBottom .piclist"
+    );
+
+    let ul = document.querySelector(
+      "#warpper #content .contentMain #center .left .leftBottom .piclist ul"
+    );
+
+    let liNodes = document.querySelectorAll(
+      "#warpper #content .contentMain #center .left .leftBottom .piclist ul li"
+    );
+
+    // 3.计算
+    // 起点
+    let start = 0;
+
+    // 步长
+    let step = (liNodes[0].offsetWidth + 20) * 2;
+
+    // 总体运动的距离值 = ul宽度 - div框的宽度 = (图片的总数 - div中显示的数量) * (li的宽度 + 20)
+    let endPosition = (liNodes.length - 5) * (liNodes[0].offsetWidth + 20);
+
+    // 4.发生事件
+    prev.onclick = function () {
+      start = start - step;
+      if (start < 0) {
+        start = 0;
+      }
+      ul.style.left = -start + "px";
+    };
+    next.onclick = function () {
+      start = start + step;
+      if (start > endPosition) {
+        start = endPosition;
+      }
+      ul.style.left = -start + "px";
+    };
+  })();
 };

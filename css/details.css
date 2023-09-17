@@ -194,10 +194,13 @@
   height: 56px;
   float: left;
   overflow: hidden;
+  position: relative;
 }
 #warpper #content .contentMain #center .left .leftBottom .piclist ul {
   white-space: nowrap;
-  font-size: 0;
+  position: absolute;
+  left: 0;
+  transition: 0.5s;
 }
 #warpper #content .contentMain #center .left .leftBottom .piclist ul li {
   width: 50px;
