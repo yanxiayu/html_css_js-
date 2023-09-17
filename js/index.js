@@ -88,6 +88,22 @@ window.onload = function () {
       // 9.将大图框追加到leftTop中
       leftTop.appendChild(bigPic);
 
+      // offsetWidth/offsetHeight：获取元素自身的宽高，包括border、padding、margin
+      // clientWidth/clientHeight：获取元素自身的宽高，不包括border、padding、margin
+      // getBindingClientRect():返回的是一个对象
+
+      // 设置移动事件
+      smallPic.onmousemove = function (event) {
+        // clientX：鼠标距离浏览器左侧X轴的值
+        // getBoundingClientRect().left：元素距离浏览器左侧可视left值
+        let left = event.clientX - smallPic.getBoundingClientRect().left - maskDiv.offsetWidth / 2;
+        let top = event.clientY - smallPic.getBoundingClientRect().top - maskDiv.offsetHeight / 2;
+
+        // 设置left和top属性
+        maskDiv.style.left = left+'px'
+        maskDiv.style.top = top+'px'
+      }
+
       // 设置移除事件
       smallPic.onmouseleave = function () {
         // 让小图框移除蒙版元素
