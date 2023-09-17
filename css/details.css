@@ -324,3 +324,33 @@
   float: left;
   color: #999;
 }
+#warpper #content .contentMain #center .right .rightBottom {
+  margin-top: 10px;
+  line-height: 28px;
+}
+#warpper #content .contentMain #center .right .rightBottom .chooseWrap dl {
+  margin: 13px 0;
+}
+#warpper #content .contentMain #center .right .rightBottom .chooseWrap dl::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+#warpper #content .contentMain #center .right .rightBottom .chooseWrap dl dt {
+  margin-right: 15px;
+  float: left;
+}
+#warpper #content .contentMain #center .right .rightBottom .chooseWrap dl dd {
+  margin-right: 5px;
+  color: #666;
+  line-height: 24px;
+  padding: 2px 14px;
+  border-top: 1px solid #eee;
+  border-left: 1px solid #eee;
+  border-right: 1px solid #bbb;
+  border-bottom: 1px solid #bbb;
+  float: left;
+}
+#warpper #content .contentMain #center .right .rightBottom .chooseWrap dl dd:first-of-type {
+  color: red;
+}

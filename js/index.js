@@ -295,7 +295,6 @@ window.onload = function () {
 
     // 2.获取对应数据
     let goodsDetail = goodData.goodsDetail;
-    console.log(goodsDetail);
 
     // 3.建立字符串
     let str = `
@@ -335,4 +334,6 @@ window.onload = function () {
     // 4.重新渲染数据
     rightTop.innerHTML = str;
   })();
+
+  
 };
