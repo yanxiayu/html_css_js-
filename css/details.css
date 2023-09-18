@@ -328,6 +328,25 @@
   margin-top: 10px;
   line-height: 28px;
 }
+#warpper #content .contentMain #center .right .rightBottom .choose::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+#warpper #content .contentMain #center .right .rightBottom .choose .mark {
+  height: 30px;
+  background: snow;
+  border: 1px solid #ddd;
+  padding: 0 20px;
+  margin-right: 20px;
+  text-align: center;
+  line-height: 30px;
+  float: left;
+}
+#warpper #content .contentMain #center .right .rightBottom .choose .mark a {
+  color: red;
+  margin-left: 20px;
+}
 #warpper #content .contentMain #center .right .rightBottom .chooseWrap dl {
   margin: 13px 0;
 }

@@ -382,10 +382,18 @@ window.onload = function () {
   // 点击商品参数之后的颜色变红效果
   (function () {
     /**
+     * 没一行文字颜色排他
      * 思路：
-     * 1.获取所有dl元素，取其中第一个dl元素下的所有dd先做测试
+     * 1.获取所有dl元素，取其中第一个dl元素下的所有dd先做测试，
+     * 测试完毕之后在对应dl第一行下标的前面嵌套一个for循环，目的在变换下标
      * 2.循环所有的dd元素，并且添加点击事件
      * 3.确定实际发生事件的目标源对象设置其文字颜色为红色，然后将其他元素的颜色都重置为基础颜色(#666)
+     *
+     * *****************************************************************************************
+     * 点击dd之后产生mark标记
+     * 思路：
+     * 1.首先创建一个可以容纳点击的dd元素值的容器(数组)，确定数组的起始长度,再添加默认的初始值
+     * 2.然后再将点击的dd元素的值按照对应下标写入到数组的元素身上
      */
 
     // 1.找第一个dl下的dd元素
@@ -393,20 +401,63 @@ window.onload = function () {
       "#warpper #content .contentMain #center .right .rightBottom .chooseWrap dl"
     );
 
-    let ddNodes = dlNodes[0].querySelectorAll("dd");
+    // 创建数组并设置数组的初始长度
+    let arr = new Array(dlNodes.length);
 
-    // 2.遍历当前所有的dd元素
-    for (let i = 0; i < ddNodes.length; i++) {
-      ddNodes[i].addEventListener("click", function () {
+    // 获取choose标签
+    let choose = document.querySelector(
+      "#warpper #content .contentMain #center .right .rightBottom .choose"
+    );
 
-        // 重置未点击的元素对象颜色
-        for (let j = 0; j < ddNodes.length; j++){
-          ddNodes[j].style.color = '#666'
-        }
+    // 给数组填充值
+    arr.fill(0);
 
-        // 设置点击元素的颜色为red
-        this.style.color = "red";
-      });
+    for (let i = 0; i < dlNodes.length; i++) {
+      // 循环取出每个dl
+      let ddNodes = dlNodes[i].querySelectorAll("dd");
+
+      // 2.遍历当前所有的dd元素
+      for (let j = 0; j < ddNodes.length; j++) {
+        ddNodes[j].addEventListener("click", function () {
+          // 清空choose元素
+          choose.innerHTML = "";
+
+          // 重置未点击的元素对象颜色
+          for (let k = 0; k < ddNodes.length; k++) {
+            ddNodes[k].style.color = "#666";
+          }
+
+          // 设置点击元素的颜色为red
+          this.style.color = "red";
+
+          // 点击哪一个dd元素动态的产生一个新的mark元素
+          arr[i] = this.innerText;
+
+          // 遍历arr数组，将非0元素的值添加到mark标记中
+          arr.forEach(function (value) {
+            // 只要是为真的条件，就动态的创建mark标记
+            if (value) {
+              // 创建div元素
+              let markDiv = document.createElement("div");
+              // 设置类名为mark
+              markDiv.className = "mark";
+              // 获取值
+              markDiv.innerText = value;
+
+              // 创建a元素
+              let aNode = document.createElement("a");
+              // 设置值
+              aNode.innerText = "X";
+
+              // div元素追加a标签
+              markDiv.appendChild(aNode);
+
+              // choose元素追加div
+              choose.appendChild(markDiv);
+            }
+          });
+        });
+      }
     }
   })();
 };
