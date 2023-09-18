@@ -593,11 +593,6 @@
                     width: 120px;
                     height: 130px;
                   }
-                  > span {}
-                  div {
-                    input {}
-                    span {}
-                  }
                 }
               }
               // 右边
@@ -629,8 +624,58 @@
               }
             }
           }
+          
+          // 选项卡开始
+          .bottomDetail {
+            // 菜单
+            .tab{
+              background-color: #ededed;
+              .clearfix();
+              li {
+                border-top: 1px solid #ddd;
+                border-bottom: 1px solid #ddd;
+                border-right: 1px solid #ddd;
+                background-color: #fff;
+                height: 40px;
+                padding-left: 11px;
+                padding-right: 11px;
+                float: left;
+                line-height: 40px;
+                text-align: center;
+                &.active {
+                  background-color: red;
+                  border-left: 1px solid #ddd;
+
+                  a {
+                    color: #fff;
+                  }
+                }
+              }
+            }
+            // 内容
+            .tabContent {
+              .clearfix();
+              div {
+                padding-left: 10px;
+                line-height: 25px;
+                &.active {
+                  margin: 10px 0;
+                }
+              }
+              img {
+                padding-left: 10px;
+                width: 200px;
+                height: 110px;
+                float: left;
+                border: 1px dashed palevioletred;
+                margin: 10px;
+              }
+            }
+          }
+          // 选项卡结束
         }
       }
+
       // 下边区域结束
     }
   }

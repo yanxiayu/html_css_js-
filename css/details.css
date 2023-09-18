@@ -584,3 +584,50 @@
   background-color: #e1251b;
   border: none;
 }
+#warpper #content .contentMain .goodsDetail .rightDetail .bottomDetail .tab {
+  background-color: #ededed;
+}
+#warpper #content .contentMain .goodsDetail .rightDetail .bottomDetail .tab::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+#warpper #content .contentMain .goodsDetail .rightDetail .bottomDetail .tab li {
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  background-color: #fff;
+  height: 40px;
+  padding-left: 11px;
+  padding-right: 11px;
+  float: left;
+  line-height: 40px;
+  text-align: center;
+}
+#warpper #content .contentMain .goodsDetail .rightDetail .bottomDetail .tab li.active {
+  background-color: red;
+  border-left: 1px solid #ddd;
+}
+#warpper #content .contentMain .goodsDetail .rightDetail .bottomDetail .tab li.active a {
+  color: #fff;
+}
+#warpper #content .contentMain .goodsDetail .rightDetail .bottomDetail .tabContent::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+#warpper #content .contentMain .goodsDetail .rightDetail .bottomDetail .tabContent div {
+  padding-left: 10px;
+  line-height: 25px;
+}
+#warpper #content .contentMain .goodsDetail .rightDetail .bottomDetail .tabContent div.active {
+  margin: 10px 0;
+}
+#warpper #content .contentMain .goodsDetail .rightDetail .bottomDetail .tabContent img {
+  padding-left: 10px;
+  width: 200px;
+  height: 110px;
+  float: left;
+  border: 1px dashed palevioletred;
+  margin: 10px;
+}
