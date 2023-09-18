@@ -369,6 +369,8 @@ window.onload = function () {
         // 创建dd元素
         let ddNode = document.createElement("dd");
         ddNode.innerHTML = crumbData[i].data[j].type;
+        // 给每个dd添加自定义属性
+        ddNode.setAttribute("price", crumbData[i].data[j].changePrice);
 
         // dl追加dd
         dlNode.appendChild(ddNode);
@@ -379,7 +381,7 @@ window.onload = function () {
     }
   })();
 
-  // 点击商品参数之后的颜色变红效果
+  // 点击商品参数之后的效果
   (function () {
     /**
      * 没一行文字颜色排他
@@ -431,18 +433,21 @@ window.onload = function () {
           this.style.color = "red";
 
           // 点击哪一个dd元素动态的产生一个新的mark元素
-          arr[i] = this.innerText;
+          arr[i] = this;
+
+          // 调用切换价格函数，实参
+          changePriceBind(arr);
 
           // 遍历arr数组，将非0元素的值添加到mark标记中
           arr.forEach(function (value, index) {
-            // 只要是为真的条件，就动态的创建mark标记
+            // 如果数组有值，就动态的创建mark
             if (value) {
               // 创建div元素
               let markDiv = document.createElement("div");
               // 设置类名为mark
               markDiv.className = "mark";
               // 获取值
-              markDiv.innerText = value;
+              markDiv.innerText = value.innerText;
 
               // 创建a元素
               let aNode = document.createElement("a");
@@ -484,11 +489,46 @@ window.onload = function () {
               ddlist[0].style.color = "red";
 
               // 删除对应下标的mark标记
-              choose.removeChild(this.parentNode)
+              choose.removeChild(this.parentNode);
+
+              // 调用价格函数
+              changePriceBind(arr)
             };
           }
         });
       }
     }
   })();
+
+  // 价格变动的函数声明 形参
+  function changePriceBind(arr) {
+    /**
+     * 这个函数在删除mark、点击dd的时候进行调用
+     * 思路:
+     * 1.获取价格的标签元素
+     * 2.给每一个dd标签身上都设置一个自定义属性，用来记录变化的价格
+     * 3.遍历arr数组，将dd元素身上的价格和原来的价格相加
+     * 4.最后将计算之后的结果重新渲染到p价格标签当中
+     */
+
+    // 1.获取原价格标签
+    let oldPrice = document.querySelector(
+      "#warpper #content .contentMain #center .right .rightTop .priceWrap .priceTop .price p"
+    );
+
+    // 取出默认的价格
+    let price = goodData.goodsDetail.price;
+
+    // 2.遍历arr数组
+    for (let i = 0; i < arr.length; i++) {
+      // 如果arr的每一项不为0
+      if (arr[i]) {
+        // 数据类型强制转换
+        let changePrice = Number(arr[i].getAttribute("price"));
+        // 最终价格
+        price = price + changePrice;
+      }
+    }
+    oldPrice.innerHTML = price;
+  }
 };
