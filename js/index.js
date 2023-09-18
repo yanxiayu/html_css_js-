@@ -492,7 +492,7 @@ window.onload = function () {
               choose.removeChild(this.parentNode);
 
               // 调用价格函数
-              changePriceBind(arr)
+              changePriceBind(arr);
             };
           }
         });
@@ -530,5 +530,76 @@ window.onload = function () {
       }
     }
     oldPrice.innerHTML = price;
+
+    // 3.将变化后的价格写到标签当中
+    // 获取左侧价格元素
+    let leftPrice = document.querySelector(
+      "#warpper #content .contentMain .goodsDetail .rightDetail .chooseBox .listWarp .left p"
+    );
+
+    leftPrice.innerText = "￥" + price;
+
+    // 4.遍历选择搭配中所有的复选框，看是否有选中的
+    let inputs = document.querySelectorAll(
+      "#warpper #content .contentMain .goodsDetail .rightDetail .chooseBox .listWarp .center li input"
+    );
+
+    for (let j = 0; j < inputs.length; j++) {
+      // 判断复选框是否被选中
+      if (inputs[j].checked) {
+        // 选中复选框
+        price += Number(inputs[j].value);
+      }
+    }
+
+    // 5.右侧优惠价格重新渲染
+    // 获取优惠价元素
+    let newPrice = document.querySelector(
+      "#warpper #content .contentMain .goodsDetail .rightDetail .chooseBox .listWarp .right i"
+    );
+    newPrice.innerText = "￥" + price;
   }
+
+  // 选择搭配中间区域复选框选中优惠价变动效果
+  (function () {
+    /**
+     * 思路：
+     * 1.先获取中间区域的所有复选框元素
+     * 2.遍历元素，取出价格，和基础价格进行累加，累加之后重新写回优惠价标签中
+     * 3.
+     */
+
+    // 1.先获取复选框的元素
+    let inputs = document.querySelectorAll(
+      "#warpper #content .contentMain .goodsDetail .rightDetail .chooseBox .listWarp .center li input"
+    );
+
+    // 获取左侧价格元素
+    let leftPrice = document.querySelector(
+      "#warpper #content .contentMain .goodsDetail .rightDetail .chooseBox .listWarp .left p"
+    );
+
+    // 获取优惠价元素
+    let newPrice = document.querySelector(
+      "#warpper #content .contentMain .goodsDetail .rightDetail .chooseBox .listWarp .right i"
+    );
+
+    // 2.先遍历复选框
+    for (let i = 0; i < inputs.length; i++) {
+      inputs[i].addEventListener("click", function () {
+        // left价格：元素截取 1 为下标，从￥开始的值都要，只写一个参数
+        let oldPrice = Number(leftPrice.innerText.slice(1));
+
+        for (let j = 0; j < inputs.length; j++) {
+          // 如果选中
+          if (inputs[j].checked) {
+            // 新的price = leftprice + 选中复选框的price
+            oldPrice = oldPrice + Number(inputs[i].value);
+          }
+        }
+        // 3.重新写回优惠价
+        newPrice.innerText = "￥" + oldPrice;
+      });
+    }
+  })();
 };
