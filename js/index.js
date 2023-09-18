@@ -434,7 +434,7 @@ window.onload = function () {
           arr[i] = this.innerText;
 
           // 遍历arr数组，将非0元素的值添加到mark标记中
-          arr.forEach(function (value) {
+          arr.forEach(function (value, index) {
             // 只要是为真的条件，就动态的创建mark标记
             if (value) {
               // 创建div元素
@@ -448,6 +448,8 @@ window.onload = function () {
               let aNode = document.createElement("a");
               // 设置值
               aNode.innerText = "X";
+              // 并且设置下标,index为自定义属性名称
+              aNode.setAttribute("index", index);
 
               // div元素追加a标签
               markDiv.appendChild(aNode);
@@ -456,6 +458,35 @@ window.onload = function () {
               choose.appendChild(markDiv);
             }
           });
+
+          // 获取所有a标签元素，并且循环发生点击事件
+          let aNodes = document.querySelectorAll(
+            "#warpper #content .contentMain #center .right .rightBottom .choose .mark a"
+          );
+
+          for (let n = 0; n < aNodes.length; n++) {
+            aNodes[n].onclick = function () {
+              // 获取点击的a标签身上的自定义index属性的值
+              let idx1 = this.getAttribute("index");
+
+              // 恢复数组中对应数组下标的值 0
+              arr[idx1] = 0;
+
+              // 查找对应下标的那个dl行的所有dd元素
+              let ddlist = dlNodes[idx1].querySelectorAll("dd");
+
+              // 遍历所有的dd元素
+              for (let m = 0; m < ddlist.length; m++) {
+                // 其余所有dd元素颜色都为灰色
+                ddlist[m].style.color = "#666";
+              }
+              // 默认的文字颜色恢复为red
+              ddlist[0].style.color = "red";
+
+              // 删除对应下标的mark标记
+              choose.removeChild(this.parentNode)
+            };
+          }
         });
       }
     }
