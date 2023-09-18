@@ -418,3 +418,38 @@
   border: none;
   float: left;
 }
+#warpper #content .contentMain .goodsDetail {
+  width: 1200px;
+  margin: 30px auto 0;
+}
+#warpper #content .contentMain .goodsDetail .leftAside {
+  width: 210px;
+  border: 1px solid #ccc;
+  height: 1000px;
+}
+#warpper #content .contentMain .goodsDetail .leftAside::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+#warpper #content .contentMain .goodsDetail .leftAside .asideTop h4 {
+  height: 40px;
+  width: 105px;
+  background: #fff;
+  float: left;
+  text-align: center;
+  line-height: 40px;
+  border-bottom: 1px solid #ccc;
+  border-top: 1px solid #fff;
+}
+#warpper #content .contentMain .goodsDetail .leftAside .asideTop h4.active {
+  border-top: 1px solid #e1251b;
+  width: 105px;
+  line-height: 37px;
+  text-align: center;
+  line-height: 40px;
+  border-bottom: none;
+}
+#warpper #content .contentMain .goodsDetail .leftAside .asideBottom {
+  padding: 10px;
+}
