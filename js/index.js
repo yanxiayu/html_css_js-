@@ -335,5 +335,48 @@ window.onload = function () {
     rightTop.innerHTML = str;
   })();
 
-  
+  // 商品参数选择区域动态渲染
+  (function () {
+    /**
+     * 思路：
+     * 1.找rightBottom的元素对象
+     * 2.查找data.js -> goodData.goodsDetail.crumbData数据
+     * 3.由于数据是一个数组，要遍历，有一个元素需要有一个动态的dl元素对象(dt、dd)
+     */
+
+    // 1.查找元素对象
+    let chooseWrap = document.querySelector(
+      "#warpper #content .contentMain #center .right .rightBottom .chooseWrap"
+    );
+
+    // 2.查找数据
+    let crumbData = goodData.goodsDetail.crumbData;
+
+    // 3.循环数据
+    for (let i = 0; i < crumbData.length; i++) {
+      // 4.创建dl元素对象
+      let dlNode = document.createElement("dl");
+
+      // 5.创建dt元素对象
+      let dtNode = document.createElement("dt");
+      dtNode.innerHTML = crumbData[i].title;
+
+      // 6.将dt追加到dl中
+      dlNode.appendChild(dtNode)
+
+      // 7.遍历dd元素 crumbData.data[i].type/changePrice
+      for (let j = 0; j < crumbData[i].data.length; j++){
+
+        // 创建dd元素
+        let ddNode = document.createElement('dd')
+        ddNode.innerHTML = crumbData[i].data[j].type
+
+        // dl追加dd
+        dlNode.appendChild(ddNode)
+      }
+
+      // 8.chooseWrap追加dl
+      chooseWrap.appendChild(dlNode)
+    }
+  })();
 };
