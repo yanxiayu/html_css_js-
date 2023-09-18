@@ -362,21 +362,51 @@ window.onload = function () {
       dtNode.innerHTML = crumbData[i].title;
 
       // 6.将dt追加到dl中
-      dlNode.appendChild(dtNode)
+      dlNode.appendChild(dtNode);
 
       // 7.遍历dd元素 crumbData.data[i].type/changePrice
-      for (let j = 0; j < crumbData[i].data.length; j++){
-
+      for (let j = 0; j < crumbData[i].data.length; j++) {
         // 创建dd元素
-        let ddNode = document.createElement('dd')
-        ddNode.innerHTML = crumbData[i].data[j].type
+        let ddNode = document.createElement("dd");
+        ddNode.innerHTML = crumbData[i].data[j].type;
 
         // dl追加dd
-        dlNode.appendChild(ddNode)
+        dlNode.appendChild(ddNode);
       }
 
       // 8.chooseWrap追加dl
-      chooseWrap.appendChild(dlNode)
+      chooseWrap.appendChild(dlNode);
+    }
+  })();
+
+  // 点击商品参数之后的颜色变红效果
+  (function () {
+    /**
+     * 思路：
+     * 1.获取所有dl元素，取其中第一个dl元素下的所有dd先做测试
+     * 2.循环所有的dd元素，并且添加点击事件
+     * 3.确定实际发生事件的目标源对象设置其文字颜色为红色，然后将其他元素的颜色都重置为基础颜色(#666)
+     */
+
+    // 1.找第一个dl下的dd元素
+    let dlNodes = document.querySelectorAll(
+      "#warpper #content .contentMain #center .right .rightBottom .chooseWrap dl"
+    );
+
+    let ddNodes = dlNodes[0].querySelectorAll("dd");
+
+    // 2.遍历当前所有的dd元素
+    for (let i = 0; i < ddNodes.length; i++) {
+      ddNodes[i].addEventListener("click", function () {
+
+        // 重置未点击的元素对象颜色
+        for (let j = 0; j < ddNodes.length; j++){
+          ddNodes[j].style.color = '#666'
+        }
+
+        // 设置点击元素的颜色为red
+        this.style.color = "red";
+      });
     }
   })();
 };

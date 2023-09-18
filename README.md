@@ -24,3 +24,11 @@ white-space: nowrap;
 ```
 
 ### JavaScript
+1. 在遍历元素时，使用let声明而不是var
+```javascript
+for (let i = 0; i < ddNodes.length; i++){
+  ddNodes[i].addEventListener('click', function () {
+    // 因为for循环是同步执行代码，当整体js文件加载之后，函数一旦被调用，for循环就会立即执行，没有任何的时机，所以不能使用var
+  })
+}
+```
