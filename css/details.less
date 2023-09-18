@@ -460,11 +460,13 @@
       .goodsDetail {
         width: 1200px;
         margin: 30px auto 0;
+        .clearfix();
         // 左边侧边栏
         .leftAside {
           width: 210px;
           border: 1px solid #ccc;
           .clearfix();
+          float: left;
           // 上边
           .asideTop {
             h4 {
@@ -532,12 +534,101 @@
             }
            
           }
-        
-
-
         // 右边详情结构
         .rightDetail {
-
+          width: 980px;
+          float: right;
+          // 上边选择搭配开始
+          .chooseBox {
+            border: 1px #ddd solid;
+            margin-bottom: 15px;
+            // 标题
+            h4 {
+              border-bottom: 1px solid #ddd;
+              background-color: #f1f1f1;
+              color: #333;
+              padding: 5px 0 5px 15px;
+            }
+            // 内容
+            .listWarp {
+              height: 170px;
+              padding-top: 10px;
+              .clearfix();
+              
+              // 左边
+              .left {
+                width: 127px;
+                height: 165px;
+                position: relative;
+                float: left;
+                text-align: center;
+                img {
+                  width: 87px;
+                  margin: 0 auto;
+                }
+                p {
+                  color: #c81623;
+                  font-size: 16px;
+                  text-align: center;
+                }
+                i {
+                  position: absolute;
+                  top: 48px;
+                  right: -25px;
+                  font-size: 16px;
+                }
+              }
+              // 中间
+              .center {
+                width: 668px;
+                height: 165px;
+                float: left;
+                .clearfix();
+                text-align: center;
+                li {
+                  width: 127px;
+                  margin: 0 20px;
+                  float: left;
+                  img {
+                    width: 120px;
+                    height: 130px;
+                  }
+                  > span {}
+                  div {
+                    input {}
+                    span {}
+                  }
+                }
+              }
+              // 右边
+              .right {
+                border-left: 1px solid #ddd;
+                float: left;
+                width: 153px;
+                height: 165px;
+                padding-left: 20px;
+                div {
+                  margin: 10px 0;
+                }
+                p {
+                  font-weight: bold;
+                  margin-bottom: 10px;
+                }
+                i {
+                  color: #b1191a;
+                  font-size: 16px;
+                  margin-bottom: 10px;
+                }
+                button {
+                  padding: 10px 25px;
+                  font-size: 16px;
+                  color: #fff;
+                  background-color: #e1251b;
+                  border: none;
+                }
+              }
+            }
+          }
         }
       }
       // 下边区域结束

@@ -422,9 +422,15 @@
   width: 1200px;
   margin: 30px auto 0;
 }
+#warpper #content .contentMain .goodsDetail::after {
+  content: '';
+  display: block;
+  clear: both;
+}
 #warpper #content .contentMain .goodsDetail .leftAside {
   width: 210px;
   border: 1px solid #ccc;
+  float: left;
 }
 #warpper #content .contentMain .goodsDetail .leftAside::after {
   content: '';
@@ -486,4 +492,95 @@
   padding: 2px 14px;
   line-height: 18px;
   border: 1px solid #8c8c8c;
+}
+#warpper #content .contentMain .goodsDetail .rightDetail {
+  width: 980px;
+  float: right;
+}
+#warpper #content .contentMain .goodsDetail .rightDetail .chooseBox {
+  border: 1px #ddd solid;
+  margin-bottom: 15px;
+}
+#warpper #content .contentMain .goodsDetail .rightDetail .chooseBox h4 {
+  border-bottom: 1px solid #ddd;
+  background-color: #f1f1f1;
+  color: #333;
+  padding: 5px 0 5px 15px;
+}
+#warpper #content .contentMain .goodsDetail .rightDetail .chooseBox .listWarp {
+  height: 170px;
+  padding-top: 10px;
+}
+#warpper #content .contentMain .goodsDetail .rightDetail .chooseBox .listWarp::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+#warpper #content .contentMain .goodsDetail .rightDetail .chooseBox .listWarp .left {
+  width: 127px;
+  height: 165px;
+  position: relative;
+  float: left;
+  text-align: center;
+}
+#warpper #content .contentMain .goodsDetail .rightDetail .chooseBox .listWarp .left img {
+  width: 87px;
+  margin: 0 auto;
+}
+#warpper #content .contentMain .goodsDetail .rightDetail .chooseBox .listWarp .left p {
+  color: #c81623;
+  font-size: 16px;
+  text-align: center;
+}
+#warpper #content .contentMain .goodsDetail .rightDetail .chooseBox .listWarp .left i {
+  position: absolute;
+  top: 48px;
+  right: -25px;
+  font-size: 16px;
+}
+#warpper #content .contentMain .goodsDetail .rightDetail .chooseBox .listWarp .center {
+  width: 668px;
+  height: 165px;
+  float: left;
+  text-align: center;
+}
+#warpper #content .contentMain .goodsDetail .rightDetail .chooseBox .listWarp .center::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+#warpper #content .contentMain .goodsDetail .rightDetail .chooseBox .listWarp .center li {
+  width: 127px;
+  margin: 0 20px;
+  float: left;
+}
+#warpper #content .contentMain .goodsDetail .rightDetail .chooseBox .listWarp .center li img {
+  width: 120px;
+  height: 130px;
+}
+#warpper #content .contentMain .goodsDetail .rightDetail .chooseBox .listWarp .right {
+  border-left: 1px solid #ddd;
+  float: left;
+  width: 153px;
+  height: 165px;
+  padding-left: 20px;
+}
+#warpper #content .contentMain .goodsDetail .rightDetail .chooseBox .listWarp .right div {
+  margin: 10px 0;
+}
+#warpper #content .contentMain .goodsDetail .rightDetail .chooseBox .listWarp .right p {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+#warpper #content .contentMain .goodsDetail .rightDetail .chooseBox .listWarp .right i {
+  color: #b1191a;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+#warpper #content .contentMain .goodsDetail .rightDetail .chooseBox .listWarp .right button {
+  padding: 10px 25px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #e1251b;
+  border: none;
 }
