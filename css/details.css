@@ -643,7 +643,10 @@
   top: 0;
 }
 #warpper .rightAside.asideClose {
-  right: 0;
+  right: -294px;
+}
+#warpper .rightAside.asideOpen {
+  right: 0px;
 }
 #warpper .rightAside .btns {
   width: 35px;
@@ -656,6 +659,9 @@
 }
 #warpper .rightAside .btns.btnsClose {
   background-image: url('../images/list.png');
+}
+#warpper .rightAside .btns.btnsOpen {
+  background-image: url('../images/cross.png');
 }
 #warpper .rightAside .content {
   width: 294px;

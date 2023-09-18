@@ -604,12 +604,12 @@ window.onload = function () {
   })();
 
   // 封装一个公共的选项卡函数
-  /**
-   * 思路：
-   * ① 需要被点击的元素 tabBtns
-   * ② 被切换显示的元素 tabConts
-   */
   function Tab(tabBtns, tabConts) {
+    /**
+     * 思路：
+     * ① 需要被点击的元素 tabBtns
+     * ② 被切换显示的元素 tabConts
+     */
     for (let i = 0; i < tabBtns.length; i++) {
       tabBtns[i].onclick = function () {
         for (let j = 0; j < tabBtns.length; j++) {
@@ -655,4 +655,46 @@ window.onload = function () {
     // 调用切换函数
     Tab(lis, divs);
   }
+
+  // 右边动态侧边栏的点击效果
+  (function () {
+    /**
+     * 思路：
+     * 1.先找到按钮元素，绑定点击事件
+     * 2.记录一个初始状态，点击事件内容进行判断
+     * 3.
+     */
+
+    // 1.获取按钮元素
+    let btn = document.querySelector("#warpper .rightAside .btns");
+
+    // 记录初始状态 关闭
+    let flag = true;
+
+    // 查找侧边栏元素
+    let rightAside = document.querySelector('#warpper .rightAside')
+
+    // 2.绑定点击事件
+    btn.onclick = function () {
+      // 判断，flag = true
+      if (flag) {
+        // 如果关闭，则展开
+        // flag = false;
+
+        btn.className = 'btns btnsOpen'
+
+        rightAside.className = 'rightAside asideOpen'
+      } else {
+        // 否则关闭
+        // flag = true;
+
+        btn.className = 'btns btnsClose'
+        
+        rightAside.className = 'rightAside asideClose'
+      }
+
+      // 无论前面的if和else执行的到底是谁，最终flag的状态都是在原来的基础上取反
+      flag = !flag;
+    };
+  })();
 };
