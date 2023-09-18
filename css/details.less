@@ -677,9 +677,38 @@
           // 选项卡结束
         }
       }
-
       // 下边区域结束
     }
   }
   // 内容区域结束
+
+  // 右侧动态侧边栏开始
+  .rightAside {
+    width: 300px;
+    height: 100%;
+    background-color: #7a6e6e;
+    transition: 0.5s;
+    // 固定定位
+    position: fixed;
+    top: 0;
+    // 附加样式
+    &.asideClose {
+      right: -294px;
+    }
+    // 按钮区域
+    .btns {
+      width: 35px;
+      height: 35px;
+      background-color: #7a6e6e;
+      border-radius: 3px 0 0 3px ;
+      left: -29px;
+      background-size: 35px 35px;
+      position: absolute;
+      // 附加样式
+      &.btnsClose {
+        background-image: url('../images/list.png');
+      }
+    }
+  }
+  // 右侧动态侧边栏结束
 }

@@ -634,3 +634,26 @@
   border: 1px dashed palevioletred;
   margin: 10px;
 }
+#warpper .rightAside {
+  width: 300px;
+  height: 100%;
+  background-color: #7a6e6e;
+  transition: 0.5s;
+  position: fixed;
+  top: 0;
+}
+#warpper .rightAside.asideClose {
+  right: -294px;
+}
+#warpper .rightAside .btns {
+  width: 35px;
+  height: 35px;
+  background-color: #7a6e6e;
+  border-radius: 3px 0 0 3px ;
+  left: -29px;
+  background-size: 35px 35px;
+  position: absolute;
+}
+#warpper .rightAside .btns.btnsClose {
+  background-image: url('../images/list.png');
+}
