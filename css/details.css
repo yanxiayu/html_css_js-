@@ -425,7 +425,6 @@
 #warpper #content .contentMain .goodsDetail .leftAside {
   width: 210px;
   border: 1px solid #ccc;
-  height: 1000px;
 }
 #warpper #content .contentMain .goodsDetail .leftAside::after {
   content: '';
@@ -439,8 +438,8 @@
   float: left;
   text-align: center;
   line-height: 40px;
-  border-bottom: 1px solid #ccc;
-  border-top: 1px solid #fff;
+  border-bottom: 3px solid #ccc;
+  border-top: 1px solid #ccc;
 }
 #warpper #content .contentMain .goodsDetail .leftAside .asideTop h4.active {
   border-top: 1px solid #e1251b;
@@ -452,4 +451,39 @@
 }
 #warpper #content .contentMain .goodsDetail .leftAside .asideBottom {
   padding: 10px;
+}
+#warpper #content .contentMain .goodsDetail .leftAside .asideBottom div.active ul.goodslist1::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+#warpper #content .contentMain .goodsDetail .leftAside .asideBottom div.active ul.goodslist1 li {
+  width: 50%;
+  border-bottom: 1px dashed #ededed;
+  line-height: 28px;
+  float: left;
+}
+#warpper #content .contentMain .goodsDetail .leftAside .asideBottom div.active ul.goodslist2 {
+  margin: 5px 0 15px;
+}
+#warpper #content .contentMain .goodsDetail .leftAside .asideBottom div.active ul.goodslist2 li {
+  border-bottom: 1px solid #ededed;
+}
+#warpper #content .contentMain .goodsDetail .leftAside .asideBottom div.active ul.goodslist2 li img {
+  width: 152px;
+}
+#warpper #content .contentMain .goodsDetail .leftAside .asideBottom div.active ul.goodslist2 li p {
+  font-size: 16px;
+  color: #c81623;
+}
+#warpper #content .contentMain .goodsDetail .leftAside .asideBottom div.active ul.goodslist2 li .button {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  text-align: right;
+}
+#warpper #content .contentMain .goodsDetail .leftAside .asideBottom div.active ul.goodslist2 li .button a {
+  color: #8c8c8c;
+  padding: 2px 14px;
+  line-height: 18px;
+  border: 1px solid #8c8c8c;
 }

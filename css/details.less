@@ -465,7 +465,6 @@
           width: 210px;
           border: 1px solid #ccc;
           .clearfix();
-          height: 1000px;
           // 上边
           .asideTop {
             h4 {
@@ -475,8 +474,8 @@
               float: left;
               text-align: center;
               line-height: 40px;
-              border-bottom: 1px solid #ccc;
-              border-top: 1px solid #fff;
+              border-bottom: 3px solid #ccc;
+              border-top: 1px solid #ccc;
               &.active {
                 border-top: 1px solid #e1251b;
                 width: 105px;
@@ -491,10 +490,49 @@
           .asideBottom {
             padding: 10px;
             div {
-
+              &.active {
+                ul {
+                  &.goodslist1 {
+                    .clearfix();
+                    li {
+                      width: 50%;
+                      border-bottom: 1px dashed #ededed;
+                      line-height: 28px;
+                      float: left;
+                    }
+                  }
+                  &.goodslist2 {
+                    margin: 5px 0 15px;
+                    li {
+                      border-bottom: 1px solid #ededed;
+                      img {
+                        width: 152px;
+                      }
+                      span {}
+                      p {
+                        font-size: 16px;
+                        color: #c81623;
+                      }
+                      .button {
+                        margin-top: 5px;
+                        margin-bottom: 5px;
+                        text-align: right;
+                        a {
+                          color: #8c8c8c;
+                          padding: 2px 14px;
+                          line-height: 18px;
+                          border: 1px solid #8c8c8c;
+                         }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
             }
+           
           }
-        }
+        
 
 
         // 右边详情结构
@@ -503,7 +541,6 @@
         }
       }
       // 下边区域结束
-
     }
   }
   // 内容区域结束
