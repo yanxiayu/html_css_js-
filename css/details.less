@@ -476,10 +476,10 @@
               float: left;
               text-align: center;
               line-height: 40px;
-              border-bottom: 3px solid #ccc;
+              border-bottom: 2px solid #ccc;
               border-top: 1px solid #ccc;
               &.active {
-                border-top: 1px solid #e1251b;
+                border-top: 3px solid #e1251b;
                 width: 105px;
                 line-height: 37px;
                 text-align: center;
@@ -492,7 +492,9 @@
           .asideBottom {
             padding: 10px;
             div {
+              display: none;
               &.active {
+                display: block;
                 ul {
                   &.goodslist1 {
                     .clearfix();
@@ -510,7 +512,6 @@
                       img {
                         width: 152px;
                       }
-                      span {}
                       p {
                         font-size: 16px;
                         color: #c81623;
@@ -645,7 +646,6 @@
                 &.active {
                   background-color: red;
                   border-left: 1px solid #ddd;
-
                   a {
                     color: #fff;
                   }
@@ -654,12 +654,14 @@
             }
             // 内容
             .tabContent {
-              .clearfix();
+              // .clearfix();
               div {
                 padding-left: 10px;
                 line-height: 25px;
+                display: none;
                 &.active {
                   margin: 10px 0;
+                  display: block;
                 }
               }
               img {

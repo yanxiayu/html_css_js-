@@ -602,4 +602,57 @@ window.onload = function () {
       });
     }
   })();
+
+  // 封装一个公共的选项卡函数
+  /**
+   * 思路：
+   * ① 需要被点击的元素 tabBtns
+   * ② 被切换显示的元素 tabConts
+   */
+  function Tab(tabBtns, tabConts) {
+    for (let i = 0; i < tabBtns.length; i++) {
+      tabBtns[i].onclick = function () {
+        for (let j = 0; j < tabBtns.length; j++) {
+          tabBtns[j].className = "";
+          tabConts[j].className = "";
+        }
+        this.className = "active";
+        tabConts[i].className = "active";
+      };
+    }
+  }
+
+  // 点击左侧选项卡
+  leftTab();
+  function leftTab() {
+    // 被点击的元素
+    let h4s = document.querySelectorAll(
+      "#warpper #content .contentMain .goodsDetail .leftAside .asideTop h4"
+    );
+
+    // 被切换显示的元素
+    let divs = document.querySelectorAll(
+      "#warpper #content .contentMain .goodsDetail .leftAside .asideBottom>div"
+    );
+
+    // 调用切换函数 点击元素/切换元素
+    Tab(h4s, divs);
+  }
+
+  // 点击右侧选项卡
+  rightTab();
+  function rightTab() {
+    // 被点击的元素
+    let lis = document.querySelectorAll(
+      "#warpper #content .contentMain .goodsDetail .rightDetail .bottomDetail .tab li"
+    );
+
+    // 被切换的元素
+    let divs = document.querySelectorAll(
+      "#warpper #content .contentMain .goodsDetail .rightDetail .bottomDetail .tabContent div"
+    );
+
+    // 调用切换函数
+    Tab(lis, divs);
+  }
 };

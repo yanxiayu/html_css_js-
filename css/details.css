@@ -444,11 +444,11 @@
   float: left;
   text-align: center;
   line-height: 40px;
-  border-bottom: 3px solid #ccc;
+  border-bottom: 2px solid #ccc;
   border-top: 1px solid #ccc;
 }
 #warpper #content .contentMain .goodsDetail .leftAside .asideTop h4.active {
-  border-top: 1px solid #e1251b;
+  border-top: 3px solid #e1251b;
   width: 105px;
   line-height: 37px;
   text-align: center;
@@ -457,6 +457,12 @@
 }
 #warpper #content .contentMain .goodsDetail .leftAside .asideBottom {
   padding: 10px;
+}
+#warpper #content .contentMain .goodsDetail .leftAside .asideBottom div {
+  display: none;
+}
+#warpper #content .contentMain .goodsDetail .leftAside .asideBottom div.active {
+  display: block;
 }
 #warpper #content .contentMain .goodsDetail .leftAside .asideBottom div.active ul.goodslist1::after {
   content: '';
@@ -611,17 +617,14 @@
 #warpper #content .contentMain .goodsDetail .rightDetail .bottomDetail .tab li.active a {
   color: #fff;
 }
-#warpper #content .contentMain .goodsDetail .rightDetail .bottomDetail .tabContent::after {
-  content: '';
-  display: block;
-  clear: both;
-}
 #warpper #content .contentMain .goodsDetail .rightDetail .bottomDetail .tabContent div {
   padding-left: 10px;
   line-height: 25px;
+  display: none;
 }
 #warpper #content .contentMain .goodsDetail .rightDetail .bottomDetail .tabContent div.active {
   margin: 10px 0;
+  display: block;
 }
 #warpper #content .contentMain .goodsDetail .rightDetail .bottomDetail .tabContent img {
   padding-left: 10px;
