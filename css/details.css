@@ -373,3 +373,48 @@
 #warpper #content .contentMain #center .right .rightBottom .chooseWrap dl dd:first-of-type {
   color: red;
 }
+#warpper #content .contentMain #center .right .rightBottom .addCart::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+#warpper #content .contentMain #center .right .rightBottom .addCart .count {
+  width: 55px;
+  margin-right: 15px;
+  position: relative;
+  float: left;
+}
+#warpper #content .contentMain #center .right .rightBottom .addCart .count input {
+  width: 38px;
+  height: 37px;
+  border: 1px solid #ddd;
+  color: #555;
+}
+#warpper #content .contentMain #center .right .rightBottom .addCart .count a {
+  width: 15px;
+  height: 18px;
+  color: #666;
+  background: #f1f1f1;
+  position: absolute;
+  right: 1px;
+  text-align: center;
+  line-height: 18px;
+  border: 1px solid #ddd;
+}
+#warpper #content .contentMain #center .right .rightBottom .addCart .count a:first-child {
+  top: 0;
+}
+#warpper #content .contentMain #center .right .rightBottom .addCart .count a:last-child {
+  top: 20px;
+  border-top: 0;
+}
+#warpper #content .contentMain #center .right .rightBottom .addCart button {
+  padding-left: 25px;
+  padding-right: 25px;
+  height: 36px;
+  font-size: 16px;
+  background: #e1251b;
+  color: #fff;
+  border: none;
+  float: left;
+}
