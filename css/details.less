@@ -693,7 +693,8 @@
     top: 0;
     // 附加样式
     &.asideClose {
-      right: -294px;
+      // right: -294px;
+      right: 0;
     }
     // 按钮区域
     .btns {
@@ -707,6 +708,57 @@
       // 附加样式
       &.btnsClose {
         background-image: url('../images/list.png');
+      }
+    }
+    // 侧边栏内容区域
+    .content {
+      width: 294px;
+      background-color: bisque;
+      position: absolute;
+      left: 6px;
+      top: 0;
+      bottom: 0;
+      z-index: 50;
+      // 侧边导航
+      .navlist {
+        position: absolute;
+        left: -35px;
+        top: 50%;
+        transform: translateY(-50%);
+        li {
+          width: 35px;
+          height: 35px;
+          position: relative;
+          // 小图标
+          p {
+            width: 35px;
+            height: 35px;
+            background-color: #7a6e6e;
+            background-image: url('../images/toolbars.png');
+            background-position: -87px -174px;
+            transition: 0.5s;
+          }
+          i {
+            width: 62px;
+            height: 35px;
+            text-align: center;
+            line-height: 35px;
+            position: absolute;
+            left: 35px;
+            transition: 0.5s;
+            top: 0;
+            background-color: #7a6e6e;
+          }
+          &:hover {
+            p {
+              background-color: pink;
+            }
+            i {
+              background-color: pink;
+              left:-62px;
+            }
+          }
+        }
       }
     }
   }
